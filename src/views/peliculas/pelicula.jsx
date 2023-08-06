@@ -42,23 +42,48 @@ console.log(pelisState);
 /* *HOOK -> Función que es destinada para una tarea especific
  uno de ellos useState ->hook que permite manejar el estado de un componente.  */
  export default function Pelicula(props){ //exportamos con parametros de la petición
-    const [pelisState, setPelis] = useState ([]); //se inicia con un arreglo vacio
+    const [pelisState, setPelisState] = useState ([]); //se inicia con un arreglo vacio
+    const [pelisFilter, setPelisFilter] = useState ([]);
     const [loading, setLoading] = useState (true);//segundo estado para la parte de loading es un estado booleano
     const [error, setError] = useState(null);
+        //estado de mi bara de busqueda.
+    const [search, setSearch] = useState ('');
 
 useEffect(() => { //se dispara en cualquier momento no se tiene mucho control de este se inicializa cada vez que se renderisa js para consultar datos de servisions externos como una api
     if(loading){ //pregunta por el estado
-        console.log("fetching data");
+        //console.log("fetching data");
         console.log(`http://localhost:3000/${props.type}`)
         fetch(`http://localhost:3000/${props.type}`) //desde moockon servidor.
         .then((response)=> response.json())
         .then((data) => {
-            
-            setPelis(data.peliculas);
+            setPelisState(data);//inicializar el estado
+            setPelisFilter(data.peliculas); //inicializarlo unicamente con el arreglo de peliculas, este estado guarda las peliculas filtratas
             setLoading(false); //se cambia el estado para que no lo este repitiendo
         })
     }
 }, []);
+
+
+const searchBar = (value) => { //funcion anonima de tipo arrow funcion la cual buscara lo que se busque.
+    //console.log(e.target.value)//
+   //setPelisFilter(pelisState.peliculas) //ese estado se va actualizar cvon lo que se escriba.
+            //filtrado de peliculas
+    // let pelisFilter = [];
+        setSearch(value)    
+    if(!value){ 
+        //si lo que busque esta vaco, restaurar todas las peliculas originales.
+       console.log('vacio');
+       setPelisFilter(pelisState.peliculas) //asignar a pelisfilter lo que hay en pelisstate
+       // setPelis(pelisFilter)
+    } else { //de lo contrario 
+        //filtrar las peliculas, segun el valor de la busqueda
+        const filteredPeliculas = pelisState.peliculas.filter((movie) => movie.titulo.toLowerCase().includes(value.toLowerCase())
+        );
+            //del estado que yo cree acualizo colocandolo alli.
+        setPelisFilter(filteredPeliculas); //actualizar con los datos de pelisFilter estado que se va a estar actualizando en todo momento.
+
+    }
+}
 
 if (loading){
     return (
@@ -70,6 +95,19 @@ if (loading){
     return(
     <div className="container-movies">
         
+        <div className="container">
+            <div className="row">
+                <div className="col text mb-3 mt-5">
+                    <h3>Busca tu pelicula favorita.</h3>
+                    </div>
+                        
+                    <div className="row">
+                        <div className="col">
+                            <input type="text" onChange={(e) => searchBar(e.target.value)} placeholder="titulo de pelicula." /> //
+                        </div>
+                </div>
+            </div>
+        </div>
 
         <div className="container">
             <div className="row justify-content-md-center">
@@ -80,7 +118,7 @@ if (loading){
 
         
         <Row className="row row-items">
-            {pelisState.map((movie, index)=> (
+            {pelisFilter.map((movie, index)=> (
                 <Col xs={12} sm={6} md={4} lg={3} key={index} className="items" >
                 <Card movie={movie} key={index} />
                 </Col>
