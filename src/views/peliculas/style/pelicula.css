@@ -1,0 +1,37 @@
+.container-movies {
+    width: 80%;
+    background-color: rgb(36, 42, 48);
+    
+    left: 20%;
+}
+
+.genero-title{
+    margin: 30px;
+    color: white;
+    font-size: 35px;
+    font-style: italic;
+    font-weight: 100;
+}
+
+.row-items{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.items{
+    width: 260px;
+    margin: 5px;
+}
+
+@media screen and (max-width: 414px) {
+    .container-movies {
+        width: 100%;
+        left: 35%;
+    }
+
+    .row-items{
+        justify-content: center;
+    }
+
+}

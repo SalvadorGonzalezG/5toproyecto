@@ -1,0 +1,21 @@
+.main-container{
+    display: flex;
+}
+.aside-item{
+    width: 20%;
+}
+.outlet-item{
+    width: 80%;
+}
+.carous{
+    display: flex;
+    margin-left: 400px;
+    background-color: rgb(15, 16, 15);
+    flex-direction: column;
+    height: 0px;
+    width: 0%;
+    align-items: center;
+}
+.carous .item{
+    height: 50%;
+}

@@ -1,0 +1,58 @@
+.card-style {
+    /*background-color: lightcyan;*/
+    
+    margin: 20px;
+    width: 250px;
+    height: 250px;
+    color: white;
+    /* border-radius: 16px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); */
+  }
+  .otro{
+    background-color: white;
+    
+  }
+  
+  .card-style:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+    transition: transform 0.5s; /*moviemiento suave en mi card al pasar el cursor sobre..*/
+  }
+  .ma-10{
+    padding: 10px;
+  }
+  .portada{
+    margin-top: 210px; /* Subir o bajar el div donde se encuentran todas las portadas de peliculas*/
+    width: 100%; /* 100 del contenedor donde se encuentra*/
+    height: 250px;
+    border-radius: 16px; 
+    margin-right: 18px;
+  }
+.styleGreen{
+  color: green;
+}
+.styleRed{
+  color: red;
+}
+.icon-red{
+  color: red;
+}
+.movie-description{
+  display: flex;
+}
+.movie-description-info{
+  width: 90%;
+}
+.like-buton{
+  width: 10%;
+  text-align: right;
+}
+.movie-title{
+  font-size: 18px;
+}
+.movie-subtitle{
+  font-size: 14px;
+  margin: 0;
+  padding: 0;
+}
+  

@@ -1,0 +1,98 @@
+.aside{
+    padding-top: 70px;
+    width: 20%;
+    height: 100vh;
+    background-color: rgb(36, 35, 35);
+    color: white;
+    display: flex;
+    flex-direction: column;
+   
+    /*top: 0; 
+    bottom: 0;
+     position: fixed; */
+    
+}
+.aside a{
+    height: 50px;
+    padding: 10px;
+    font-size: 13px;
+    text-align: center;
+    color: white;
+    text-decoration: none;
+}
+.aside .linkActive{
+    background-color: rgb(36, 42, 48);
+    color: olivedrab;
+    font-weight: 700;
+}
+@media screen and (max-width: 414px){
+    .aside{
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+    }
+}
+
+.aside div{
+    height: 50px;
+    display: flex;
+    align-items: center;
+    
+}
+.aside div p{
+    margin-left: 30px;
+}
+.aside div a {
+    align-items: center;
+    color: orange;
+}
+.aside div:hover{
+    padding: 10px;
+    background-color:rgb(40, 38, 38) ;
+    color: orange;
+    border-radius: 20px;
+}
+/*
+.aside {
+    padding-top: 70px;
+    width: 20%;
+    height: 100vh;
+    background-color: rgb(36, 35, 35);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+  }
+  
+   .aside a {
+      height: 50px;
+      padding: 10px;
+      font-size: 13px;
+      text-align: center;
+      color: white;
+      text-decoration: none;
+  }
+  
+  .aside a:hover {
+    background-color: rgb(36, 42, 48);
+    color: orangered;
+  }
+  
+  .aside .linkActive {
+      background-color: rgb(36, 42, 48);
+      color: orangered;
+      font-weight: 700;
+  }
+  
+  
+  @media screen and (max-width: 414px) {
+      .aside {
+          position: fixed;
+          top: 0;
+          left: 0;
+          bottom: 0;
+      }
+  } */

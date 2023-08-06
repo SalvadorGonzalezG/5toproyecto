@@ -1,0 +1,6 @@
+*{ /* apliar estilo a todo el body*/
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* respetar los porcentajes de ancho y alto*/
+
+}

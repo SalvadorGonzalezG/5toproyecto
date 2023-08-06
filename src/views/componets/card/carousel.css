@@ -1,0 +1,26 @@
+.carouse{
+    width: 80%;
+    background-color: rgb(36, 42, 48);
+    
+
+}
+
+.carousel_1{
+    
+    display: flex;
+    margin-left: 200px;
+    margin-top: 15px;
+    border-radius: 45px; 
+    color: black;
+    width: 700px;
+    border-radius: 10px;
+    height: 250px;
+
+}
+.car{
+    margin-left: 71px;
+    border-radius: 0px;
+    width: 80%;
+    height: 80%;
+
+}
