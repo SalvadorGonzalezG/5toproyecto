@@ -12,6 +12,7 @@ import Footer from './views/footer/Footer.jsx'
 import Home from './views/Home/Home.jsx';
 import Peliculas from './views/peliculas/pelicula.jsx';
 import Carousel from './views/componets/card/Carousel.jsx';
+import DetailMovie from './views/detailMovie/DetailMovie.jsx';
 
 const router = createBrowserRouter([ //guarda un array de objetos
   { 
@@ -39,7 +40,17 @@ const router = createBrowserRouter([ //guarda un array de objetos
           {
             path:"/anime",
             element: <Peliculas type="anime" key="anime" />, //reutilizamos nuestro codigo (Perliculas) y con Key hacemos que este cmabie y se identifica
+           /* children: [
+              {
+              path: "/:movie",
+              element: <h1>Movie</h1>
             }
+            ]*/
+          },
+          {
+            path: "/:movie",
+            element: <DetailMovie/>,
+          }
         ]
       },
   

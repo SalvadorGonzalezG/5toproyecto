@@ -4,3 +4,6 @@
     box-sizing: border-box; /* respetar los porcentajes de ancho y alto*/
 
 }
+body{
+    background-color: rgb(36, 42, 48);
+}
